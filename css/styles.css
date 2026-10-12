@@ -1,0 +1,116 @@
+body{
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(5,auto);
+    min-height: 100vh; 
+    gap: 0.1em;
+    background-color: black;
+}
+
+/* Header , he separado las letras de RGB en distintos span para asignar a cada una un color.
+He usado display: flex para alinear las letras vertical y horizontalmente*/
+header{
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    background-color: #101116;
+}
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2em;
+    padding-top: 1em;
+}
+/*Suelo usar transition, es facil de entender y se pueden hacer efectos muy chulos, es basicamente para que cualquier cambio
+por ejemplo con :hover no se haga de golpe y tarde el tiempo que le digas en hacerse, como la web va de colores, al esperar 2 segundos
+en cambiarse los colores, se puede llegar a ver el morado, la propiedad se pone en el elemento con y sin hover.*/
+#primeraLetra{
+    color: red;
+    transition: 2s;
+}
+div:hover #primeraLetra{
+    color: blue;
+    transition: 2s;
+}
+#segundaLetra{
+    color: green;
+    transition: 2s;
+}
+#terceraLetra{
+    color: blue;
+    transition: 2s;
+}
+div:hover #terceraLetra{
+    color: red;
+    transition: 2s;
+}
+
+/* Nav , de igual forma que el header he usado display: flex para la alineacion de los hijos.*/
+nav{
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around   ;
+    align-items: center;
+    padding: 0.5em;
+    background-color: #181A20;
+}
+nav a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+/*He usado nth-of-type porque me parece mas sencillo que ponerle 3 id, al final el nav solo tiene 3 elementos dentro y son iguales.*/
+nav a:nth-of-type(1){
+    color: red;
+}
+nav a:nth-of-type(2){
+    color: green;
+}
+nav a:nth-of-type(3){
+    color: blue;
+}
+
+/*Zona central (asides y main)*/
+#panelIzquierdo{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+main{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+#panelDerecho{
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+/*Por ahorrar codigo he separado los atributos propios en cada zona, izquierda, central y derecha pero los atributos que estaban en las tres como la alineacion y separacion, los puedo poner juntos.*/
+main , #panelIzquierdo, #panelDerecho{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+}
+img{
+  width: 100%;
+  flex: 1; /* Como los padres de las imagenes tienen display: flex, se puede usar flex: 1 para que ocupen todo el alto del padre*/
+  border-radius: 1em;
+  aspect-ratio: 16/9; /* Algunas imagenes tenian un tamaño distinto, con aspect-ratio se ponen todas iguales */
+}
+#panelInferior{
+    grid-column: 1/4;
+    grid-row: 4/5;
+    padding: 1em;
+    background-color: #0D1117;
+}
+footer{
+    grid-column: 1/4;
+    grid-row: 5/6;
+    padding: 2em;
+    background-color: #08090D;
+}
