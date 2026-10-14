@@ -101,13 +101,64 @@ img{
   flex: 1; /* Como los padres de las imagenes tienen display: flex, se puede usar flex: 1 para que ocupen todo el alto del padre*/
   border-radius: 1em;
   aspect-ratio: 16/9; /* Algunas imagenes tenian un tamaño distinto, con aspect-ratio se ponen todas iguales */
+  transition: 2s;
 }
+img:hover{
+    filter: grayscale(100%); /*Esto es basicamente un filtro gris a la imagen, usando transition lo hace poco a poco y creo que queda bien*/
+    transition: 2s;
+}
+
+
+/* Para el panel inferior queria usar una lista para hacer como un visualizacion grafica de los colores primarios, cada mezcla en una linea.
+como he usado los p como cajas, necesito que su padre li tenga display flex, con row para que vayan horizontalmente*/
 #panelInferior{
     grid-column: 1/4;
     grid-row: 4/5;
     padding: 1em;
     background-color: #0D1117;
+    color: white;
 }
+#panelInferior ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#panelInferior ul li p{
+    padding: 2em;
+    margin: 1em;
+    border: 1px solid black;
+    border-radius: 1em;
+    width: 2em;
+}
+/* Podria haber hecho esto con nth of type o nth of child pero creo que con clases e id se va a ver mejor a la hora de leer el codigo*/
+.rojo{
+    background-color: red;
+}
+.verde{
+    background-color: green;
+}
+.azul{
+    background-color: blue;
+}
+#amarillo,#magenta,#cian{
+    background-color: grey;
+    transition: 2s;
+}
+#amarillo:hover{
+    background-color: yellow;
+    transition: 2s;
+}
+#magenta:hover{
+    background-color: magenta;
+    transition: 2s;
+}
+#cian:hover{
+    background-color: cyan;
+    transition: 2s;
+}
+
+/* Footer
 footer{
     grid-column: 1/4;
     grid-row: 5/6;
