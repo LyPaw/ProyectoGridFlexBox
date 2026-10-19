@@ -116,7 +116,7 @@ como he usado los p como cajas, necesito que su padre li tenga display flex, con
     grid-row: 4/5;
     padding: 1em;
     background-color: #0D1117;
-    color: white;
+    color: rgb(165, 165, 165);
 }
 #panelInferior ul li{
     display: flex;
@@ -158,10 +158,18 @@ como he usado los p como cajas, necesito que su padre li tenga display flex, con
     transition: 2s;
 }
 
-/* Footer
+/* Footer*/
 footer{
     grid-column: 1/4;
     grid-row: 5/6;
-    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2em;
     background-color: #08090D;
+}
+footer p , a {
+    color: rgb(115, 114, 114);
+}
+footer a{
+    text-decoration: none;
 }
