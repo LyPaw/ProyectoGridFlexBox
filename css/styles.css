@@ -4,7 +4,6 @@ body{
     grid-template-columns: repeat(3,auto);
     grid-template-rows: repeat(5,auto);
     min-height: 100vh; 
-    gap: 0.1em;
     background-color: black;
 }
 
@@ -53,12 +52,14 @@ nav{
     grid-row: 2 / 3;
     display: flex;
     flex-direction: row;
-    justify-content: space-around   ;
+    justify-content: space-around  ;
     align-items: center;
     padding: 0.5em;
     background-color: #181A20;
 }
 nav a{
+    flex: 1; /* Uso aqui flex 1 para que todos los a midan lo mismo y se centre adecuadamente */
+    text-align: center;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.5em;
@@ -98,6 +99,7 @@ main , #panelIzquierdo, #panelDerecho{
 }
 img{
   width: 100%;
+  min-width: 0; /* Esto permite que la imagen se encoja */
   flex: 1; /* Como los padres de las imagenes tienen display: flex, se puede usar flex: 1 para que ocupen todo el alto del padre*/
   border-radius: 1em;
   aspect-ratio: 16/9; /* Algunas imagenes tenian un tamaño distinto, con aspect-ratio se ponen todas iguales */
@@ -117,6 +119,9 @@ como he usado los p como cajas, necesito que su padre li tenga display flex, con
     padding: 1em;
     background-color: #0D1117;
     color: rgb(165, 165, 165);
+}
+ul{
+    padding: 0; /*Si no pongo padding 0 al ul tiene un padding a la izquierda y no se alinea correctamente */
 }
 #panelInferior ul li{
     display: flex;
@@ -172,4 +177,60 @@ footer p , a {
 }
 footer a{
     text-decoration: none;
+}
+
+
+/* Escritorio (>1024px): se mantiene el layout , con 3 columnas */
+
+/* Tablet (768px - 1024px): 2 columnas */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(6, auto);
+    }
+    /* Estos bloques ocupan las 2 columnas: de la linea 1 a la 3 */
+    header, nav, #panelDerecho, #panelInferior, footer {
+        grid-column: 1 / 3;
+    }
+    /* El aside derecho baja a su propia fila y sus imagenes pasan a ir en horizontal */
+    #panelDerecho {
+        grid-row: 4 / 5;
+        flex-direction: row;
+    }
+    #panelInferior {
+        grid-row: 5 / 6;
+    }
+    footer {
+        grid-row: 6 / 7;
+    }
+}
+
+/* Movil (<768px): 1 columna */
+@media (max-width: 767px) {
+    body {
+        grid-template-columns: auto; /* Establezco solo una columna en movil */
+    }
+    /* Una sola columna: de la linea 1 a la 2 */
+    header, nav, #panelIzquierdo, main, #panelDerecho, #panelInferior, footer {
+        grid-column: 1 / 2;
+        grid-row: auto;
+    }
+
+    /* Esto parece complejo pero realmente estoy ocualtando imagenes, del panel izquierdo he ocultado la 2 y 3 , del main la 1 y la 3 y del panel derecho la 1 y la 2
+    esto para quedarme con una de cada color y que tampoco sea extremadamente larga la web en movil*/
+    #panelIzquierdo img:nth-of-type(2),
+    #panelIzquierdo img:nth-of-type(3),
+    main img:nth-of-type(1),
+    main img:nth-of-type(3),
+    #panelDerecho img:nth-of-type(1),
+    #panelDerecho img:nth-of-type(2){
+        display: none;
+    }
+    nav a {
+        font-size: 1.1em; /* Le bajo un poco el tamaño de letra al nav */
+    }
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
 }
