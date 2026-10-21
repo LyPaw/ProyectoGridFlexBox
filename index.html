@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1</title>
+    <title>Proyecto FlexBox y Grid</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -15,28 +15,37 @@
             </div>
         </header>
         <nav>
-            <a href="">INICIO</a>
-            <a href="">GALERIA</a>
-            <a href="">FOOTER</a>
+            <a href="#galeria">GALERIA</a>
+            <a href="#panelInferior">COLORES</a>
+            <a href="#pie">FOOTER</a>
         </nav>
-        <aside id="panelIzquierdo">
-            <img src="assets/rojo/imagen6.png" alt="">
-            <img src="assets/rojo/imagen5.png" alt="">
-            <img src="assets/rojo/imagen4.png" alt="">
+        <aside id="panelIzquierdo" class="tarjeta">
+            <img src="assets/rojo/imagen6.png" alt="Primera Imagen Roja">
+            <img src="assets/rojo/imagen5.png" alt="Segunda Imagen Roja">
+            <img src="assets/rojo/imagen4.png" alt="Tercera Imagen Roja">
+                <h3>Rojo</h3>
+                <p>Es el primer canal del modelo RGB. Con el verde y el azul apagados, el píxel se ve rojo puro.</p>
+                <a href="#" class="boton rojo">Ver más</a>
         </aside>
-        <main>
-            <img src="assets/verde/imagen7.png" alt="">
-            <img src="assets/verde/imagen8.png" alt="">
-            <img src="assets/verde/imagen9.png" alt="">
+        <main id="galeria" class="tarjeta">
+            <img src="assets/verde/imagen7.png" alt="Primera Imagen Verde">
+            <img src="assets/verde/imagen8.png" alt="Segunda Imagen Verde">
+            <img src="assets/verde/imagen9.png" alt="Tercera Imagen Verde">
+                <h3>Verde</h3>
+                <p>Mezclado con el rojo da amarillo y con el azul da cian. Es el color al que más sensible es el ojo humano.</p>
+                <a href="#" class="boton verde">Ver más</a>
         </main>
-        <aside id="panelDerecho">
-            <img src="assets/azul/imagen1.png" alt="">
-            <img src="assets/azul/imagen2.png" alt="">
-            <img src="assets/azul/imagen3.png" alt="">
+        <aside id="panelDerecho" class="tarjeta">
+            <img src="assets/azul/imagen1.png" alt="Primera Imagen Roja">
+            <img src="assets/azul/imagen2.png" alt="Segunda Imagen Roja">
+            <img src="assets/azul/imagen3.png" alt="Tercera Imagen Roja">
+                <h3>Azul</h3>
+                <p>El tercer canal. Con el rojo forma el magenta.</p>
+                <a href="#" class="boton azul">Ver más</a>
         </aside>
         <section id="panelInferior">
             <h2>
-                <p>¿Cómo crean tantos colores tu móvil, tu consola o las tiras LED?<p>
+                <p>¿Cómo crean tantos colores tu móvil, tu consola o las tiras LED?</p>
             </h2>
             <p>La magia se llama RGB (Red, Green, Blue: rojo, verde y azul). Es un modelo <strong>aditivo</strong>: mezcla haces de luz, y con todo apagado (nivel 0) se ve negro.</p>
             <ul>
@@ -47,9 +56,18 @@
             <p>Cada canal va del 0 al 255, lo que da más de 16,7 millones de colores.</p>
             <p><em>Fuentes: "Colour Spaces Explained: RGB vs CMYK", "Descubre el Significado RGB"</em></p>
         </section>
-        <footer>
+        <footer id="pie">
             <p><strong>Autor :</strong> Manuel Fuentes Cruz</p>
-            <p><strong>Github :</strong><a href="https://github.com/LyPaw/ProyectoGridFlexBox">LyPaw</a></p>
+            <ul>
+                <li><a href="#galeria">GALERIA</a></li>
+                <li><a href="#panelInferior">COLORES</a></li>
+                <li><a href="#pie">FOOTER</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://github.com/LyPaw/ProyectoGridFlexBox">GitHub</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
         </footer>
 </body>
 </html>

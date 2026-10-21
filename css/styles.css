@@ -52,7 +52,7 @@ nav{
     grid-row: 2 / 3;
     display: flex;
     flex-direction: row;
-    justify-content: space-around  ;
+    justify-content: space-around;
     align-items: center;
     padding: 0.5em;
     background-color: #181A20;
@@ -90,12 +90,13 @@ main{
 }
 
 /*Por ahorrar codigo he separado los atributos propios en cada zona, izquierda, central y derecha pero los atributos que estaban en las tres como la alineacion y separacion, los puedo poner juntos.*/
-main , #panelIzquierdo, #panelDerecho{
+main , #panelIzquierdo, #panelDerecho{ /* Tambien podria poner .tarjeta */
     padding: 1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 2em;
+    color: rgb(165, 165, 165);
 }
 img{
   width: 100%;
@@ -109,6 +110,20 @@ img:hover{
     filter: grayscale(100%); /*Esto es basicamente un filtro gris a la imagen, usando transition lo hace poco a poco y creo que queda bien*/
     transition: 2s;
 }
+
+.tarjeta h3 , .tarjeta p , .tarjeta a{
+    max-height: 1.5em;
+    min-height: 1.5em;
+}
+
+.boton{
+    padding: 0.8em;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 0.5em;
+}
+
 
 
 /* Para el panel inferior queria usar una lista para hacer como un visualizacion grafica de los colores primarios, cada mezcla en una linea.
@@ -168,15 +183,18 @@ footer{
     grid-column: 1/4;
     grid-row: 5/6;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 1.2em;
     background-color: #08090D;
 }
-footer p , a {
+footer p , footer a , footer li{
     color: rgb(115, 114, 114);
 }
 footer a{
     text-decoration: none;
+}
+footer li{
+   list-style: none;
 }
 
 
@@ -196,6 +214,14 @@ footer a{
     #panelDerecho {
         grid-row: 4 / 5;
         flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        gap: 1em;
+    }
+    #panelDerecho h3,
+    #panelDerecho p,
+    #panelDerecho a {
+        flex: 1 1 100%; /* Es es otra forma de declarar la propiedad flex, por defecto flex 1 es flex : 1 1 0% , si ponemos 100% en el ultimo valor estamos poniendole el max de tamaño base, de esa forma y con el wrap del padre, puede bajar abajo */
     }
     #panelInferior {
         grid-row: 5 / 6;
