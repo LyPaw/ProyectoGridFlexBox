@@ -101,7 +101,7 @@ main , #panelIzquierdo, #panelDerecho{ /* Tambien podria poner .tarjeta */
 }
 img{
   width: 100%;
-  min-width: 0; /* Esto permite que la imagen se encoja */
+  min-width: 0; /* Esto permite que la imagen se encoja más de su minimo y así no se desborda*/
   flex: 1; /* Como los padres de las imagenes tienen display: flex, se puede usar flex: 1 para que ocupen todo el alto del padre*/
   border-radius: 1em;
   aspect-ratio: 16/9; /* Algunas imagenes tenian un tamaño distinto, con aspect-ratio se ponen todas iguales */
@@ -112,6 +112,7 @@ img:hover{
     transition: 2s;
 }
 
+/* Les pongo un tamaño fijo para que de igual el texto que pongas ocupen lo mismo, sin poner tamaño fijo cada tarjeta tenia una altura distinta por el texto de debajo */
 .tarjeta h3 , .tarjeta p , .tarjeta a{
     max-height: 1.5em;
     min-height: 1.5em;
