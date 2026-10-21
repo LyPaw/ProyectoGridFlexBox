@@ -5,6 +5,7 @@ body{
     grid-template-rows: repeat(5,auto);
     min-height: 100vh; 
     background-color: black;
+    gap: 0.4em;
 }
 
 /* Header , he separado las letras de RGB en distintos span para asignar a cada una un color.
@@ -20,7 +21,7 @@ div{
     align-items: center;
     font-weight: bold;
     font-size: 2em;
-    padding-top: 1em;
+    padding: 0.5em 0;
 }
 /*Suelo usar transition, es facil de entender y se pueden hacer efectos muy chulos, es basicamente para que cualquier cambio
 por ejemplo con :hover no se haga de golpe y tarde el tiempo que le digas en hacerse, como la web va de colores, al esperar 2 segundos
@@ -241,7 +242,9 @@ footer li{
         grid-column: 1 / 2;
         grid-row: auto;
     }
-
+        nav a {
+        font-size: 1.1em; /* Le bajo un poco el tamaño de letra al nav */
+    }
     /* Esto parece complejo pero realmente estoy ocualtando imagenes, del panel izquierdo he ocultado la 2 y 3 , del main la 1 y la 3 y del panel derecho la 1 y la 2
     esto para quedarme con una de cada color y que tampoco sea extremadamente larga la web en movil*/
     #panelIzquierdo img:nth-of-type(2),
@@ -252,9 +255,9 @@ footer li{
     #panelDerecho img:nth-of-type(2){
         display: none;
     }
-    nav a {
-        font-size: 1.1em; /* Le bajo un poco el tamaño de letra al nav */
-    }
+    #panelInferior ul li p { /* quita el scroll horizontal */
+        padding: 1em; margin: 0.5em; 
+    }   
     footer {
         flex-direction: column;
         align-items: center;
